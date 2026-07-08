@@ -16,7 +16,6 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Story', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Work', href: '#projects' },
     { name: 'Timeline', href: '#education' },

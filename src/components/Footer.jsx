@@ -56,7 +56,6 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center space-x-6 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-premium-gray">
-            <a href="#about" className="hover:text-premium-black transition-colors">Story</a>
             <a href="#skills" className="hover:text-premium-black transition-colors">Skills</a>
             <a href="#projects" className="hover:text-premium-black transition-colors">Work</a>
             <a

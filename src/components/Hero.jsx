@@ -103,7 +103,7 @@ export default function Hero() {
                   variants={textRevealVariants}
                   className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-premium-black leading-[1.1]"
                 >
-                  Architecting digital Solutions
+                  Engineering robust software systems
                 </motion.h1>
               </div>
               <div className="overflow-hidden">
@@ -111,7 +111,7 @@ export default function Hero() {
                   variants={textRevealVariants}
                   className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-premium-teal leading-[1.1]"
                 >
-                  bridging code & business.
+                  with clean, modular code.
                 </motion.h1>
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function Hero() {
                 className="text-base sm:text-lg text-premium-gray max-w-xl leading-relaxed"
               >
                 Hi, I am <strong className="text-premium-black font-semibold">Sachin Suresh</strong>. 
-                Aspiring Software Engineer, Full Stack Developer, and Java Enthusiast. I design minimalist, premium interfaces and build robust systems optimized for real business operations.
+                Aspiring Software Engineer, Full Stack Developer, and Java Enthusiast. I build optimized web applications, write scalable backend architectures, and focus on algorithmic performance.
               </motion.p>
             </div>
 
