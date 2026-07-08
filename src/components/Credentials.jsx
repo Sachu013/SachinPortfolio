@@ -74,23 +74,23 @@ export default function Credentials() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              className="premium-glass p-8 sm:p-10 rounded-3xl border border-premium-border bg-premium-white hover:border-premium-teal/40 transition-editorial flex items-start space-x-6 sm:space-x-8 group"
+              className="premium-glass p-5 sm:p-6 rounded-2xl border border-premium-border bg-premium-white hover:border-premium-teal/40 transition-editorial flex items-start space-x-4 sm:space-x-5 group"
             >
               {/* Icon Container */}
-              <div className="p-4 rounded-2xl bg-premium-beige border border-premium-border text-premium-teal group-hover:scale-105 transition-transform duration-300">
+              <div className="p-3 rounded-xl bg-premium-beige border border-premium-border text-premium-teal group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
                 {cert.icon}
               </div>
 
               {/* Text Info */}
-              <div className="space-y-3 flex-1">
+              <div className="space-y-1.5 flex-1 min-w-0">
                 <span className="text-xs font-bold text-premium-gray uppercase tracking-widest block">
                   {cert.issuer}
                 </span>
-                <h4 className="text-xl sm:text-2xl font-black text-premium-black tracking-tight font-display">
+                <h4 className="text-lg sm:text-xl font-black text-premium-black tracking-tight font-display leading-tight truncate-two-lines">
                   {cert.title}
                 </h4>
-                <div className="pt-2">
-                  <span className="text-xs font-bold text-premium-teal uppercase tracking-wider block mb-1.5">
+                <div className="pt-1">
+                  <span className="text-xs font-bold text-premium-teal uppercase tracking-wider block mb-0.5">
                     Core Competency
                   </span>
                   <p className="text-base sm:text-lg text-premium-gray leading-relaxed">

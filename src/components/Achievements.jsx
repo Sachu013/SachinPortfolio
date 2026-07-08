@@ -1,32 +1,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Zap, Code, ShieldCheck } from 'lucide-react';
+import { Award, Zap, Code, ShieldCheck, Users, Volume2 } from 'lucide-react';
 
 export default function Achievements() {
   const accolades = [
     {
       index: "01",
       icon: <Award className="text-premium-teal" size={18} />,
-      title: "Academic Honor Roll",
-      desc: "Maintained a top-tier CGPA of 8.45 / 10 within the CSBS program, alongside securing 91.3% and 90.6% in 12th and 10th standard board examinations."
+      title: "Academic Excellence",
+      desc: "Maintaining an 8.45 CGPA in B.Tech Computer Science and Business Systems"
     },
     {
       index: "02",
-      icon: <Zap className="text-premium-teal" size={18} />,
-      title: "Hackathon Track Record",
-      desc: "Architected and presented a real-time civic grievance dashboard in under 36 hours, securing recognition for routing efficiency and OpenAI classification integrations."
+      icon: <Code className="text-premium-teal" size={18} />,
+      title: "Full-Stack Development",
+      desc: "Built and deployed 3+ full-stack web applications"
     },
     {
       index: "03",
-      icon: <Code className="text-premium-teal" size={18} />,
-      title: "Product Execution",
-      desc: "Developed and launched complete MERN applications and React + Firebase communication dashboards with secure token auth and client licensing parameters."
+      icon: <Users className="text-premium-teal" size={18} />,
+      title: "Leadership & Responsibility",
+      desc: "Served as School Leader during both school and higher secondary education"
     },
     {
       index: "04",
+      icon: <Volume2 className="text-premium-teal" size={18} />,
+      title: "Public Speaking",
+      desc: "Recognized for excellence in public speaking and communication"
+    },
+    {
+      index: "05",
       icon: <ShieldCheck className="text-premium-teal" size={18} />,
-      title: "Professional Badges",
-      desc: "Certified in Meta Front-End Engineering and Cisco Networking Basics, mastering modular layouts, IP subnets, and routing protocols."
+      title: "Professional Certifications",
+      desc: "Earned certifications from Meta, AWS, Cisco, and GeeksforGeeks"
+    },
+    {
+      index: "06",
+      icon: <Zap className="text-premium-teal" size={18} />,
+      title: "Hackathons & Innovation",
+      desc: "Actively participating in hackathons and technology innovation initiatives"
     }
   ];
 
