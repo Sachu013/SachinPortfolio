@@ -3,6 +3,7 @@ import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { Github, ExternalLink, ArrowUpRight } from 'lucide-react';
 import subscriptionImg from '../assets/subscription.png';
 import civicImg from '../assets/civic.png';
+import campImg from "../assets/campus.png";
 
 // Individual Tilt Card Component for Performance Isolation
 function ProjectCard({ project }) {
@@ -144,25 +145,25 @@ export default function Projects() {
       title: "Subscription Management",
       description: "A secure subscription licensing system engineered to help enterprise SaaS providers manage client contracts, trace renewals, and monitor licensing operations.",
       tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
-      github: "https://github.com/Sachu013",
-      demo: "https://example.com",
+      github: "https://github.com/Sachu013/subscription-management",
+      demo: "https://subscription-management-one.vercel.app/",
       image: subscriptionImg
     },
     {
       title: "Civic Sense Reporting",
       description: "A civic engagement platform designed for municipal grievance management. Features geolocation reporting, status tracking, and AI issue classification routing.",
-      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "OpenAI", "Google Maps"],
-      github: "https://github.com/Sachu013",
-      demo: "https://example.com",
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
+      github: "https://github.com/Sachu013/smartcity",
+      demo: "https://smartcity-inky.vercel.app/",
       image: civicImg
     },
     {
       title: "Campus Connect Social",
       description: "A real-time college networking dashboard allowing students, clubs, and admin boards to send notifications, post event updates, and coordinate threads.",
       tech: ["React.js", "Firebase", "Firestore", "Storage API", "Tailwind CSS"],
-      github: "https://github.com/Sachu013",
-      demo: "https://example.com",
-      image: null // Renders high-fidelity custom visual mockup
+      github: "https://github.com/Sachu013/CampusConnect",
+      demo: "https://campusconnect-aad93.web.app/",
+      image: campImg
     }
   ];
 
