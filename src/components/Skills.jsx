@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Coffee, Binary, Boxes, Atom, Server, Cpu, 
-  Database, Flame, Code, Layers, FileCode, GitBranch 
+  Database, Flame, Code, Layers, FileCode, GitBranch,
+  Terminal, Code2, Cloud
 } from 'lucide-react';
 
 export default function Skills() {
@@ -13,36 +14,43 @@ export default function Skills() {
       title: "Core & Programming",
       subtitle: "Foundations of computational thinking",
       skills: [
-        { name: "Java", icon: <Coffee size={18} className="text-amber-600" />, level: 90, note: "Multithreading, OOPs, Collections" },
-        { name: "Data Structures & Algorithms", icon: <Binary size={18} className="text-emerald-600" />, level: 85, note: "Searching, Sorting, Trees, Graphs" },
-        { name: "Object-Oriented Programming", icon: <Boxes size={18} className="text-indigo-600" />, level: 85, note: "Design patterns, Abstraction, Polymorphism" },
-        { name: "JavaScript (ES6+)", icon: <FileCode size={18} className="text-yellow-600" />, level: 80, note: "Async/Await, DOM, Event loop" }
+        { name: "Java", icon: <Coffee size={18} className="text-amber-600" />, level: 85, note: "Multithreading, OOPs, Collections" },
+        { name: "Data Structures & Algorithms", icon: <Binary size={18} className="text-emerald-600" />, level: 80, note: "Searching, Sorting, Trees, Graphs" },
+        { name: "Object-Oriented Programming", icon: <Boxes size={18} className="text-indigo-600" />, level: 90, note: "Design patterns, Abstraction, Polymorphism" },
+        { name: "JavaScript (ES6+)", icon: <FileCode size={18} className="text-yellow-600" />, level: 70, note: "Async/Await, DOM, Event loop" },
+        { name: "Python", icon: <Terminal size={18} className="text-emerald-600" />, level: 75, note: "OOPs, Scripting, Modules" },
+        { name: "C Language", icon: <Code2 size={18} className="text-blue-600" />, level: 75, note: "Memory Management, Pointers, compilation" }
       ]
     },
     {
       title: "Frontend Engineering",
       subtitle: "Building responsive, modern interfaces",
       skills: [
-        { name: "React.js", icon: <Atom size={18} className="text-cyan-600" />, level: 85, note: "Hooks, Context API, Virtual DOM" },
-        { name: "Tailwind CSS & Vanilla CSS", icon: <Layers size={18} className="text-sky-600" />, level: 85, note: "Grids, flexbox, custom themes" },
-        { name: "HTML5 Structure", icon: <Code size={18} className="text-orange-600" />, level: 90, note: "Semantic elements, SEO optimization" }
+        { name: "React.js", icon: <Atom size={18} className="text-cyan-600" />, level: 70, note: "Hooks, Context API, Virtual DOM" },
+        { name: "Tailwind CSS & CSS3", icon: <Layers size={18} className="text-sky-600" />, level: 70, note: "Grids, flexbox, custom themes" },
+        { name: "HTML5 Structure", icon: <Code size={18} className="text-orange-600" />, level: 85, note: "Semantic elements, SEO optimization" }
       ]
     },
     {
       title: "Backend & Databases",
       subtitle: "Handling logic, APIs, and data modeling",
       skills: [
-        { name: "Node.js", icon: <Server size={18} className="text-green-600" />, level: 75, note: "REST APIs, Event loop, File systems" },
-        { name: "Express.js", icon: <Cpu size={18} className="text-slate-600" />, level: 75, note: "Middlewares, routing, error handling" },
+        { name: "Node.js", icon: <Server size={18} className="text-green-600" />, level: 70, note: "REST APIs, Event loop, File systems" },
+        { name: "Express.js", icon: <Cpu size={18} className="text-slate-600" />, level: 70, note: "Middlewares, routing, error handling" },
         { name: "MongoDB", icon: <Database size={18} className="text-green-700" />, level: 80, note: "Aggregation, Mongoose, indexing" },
-        { name: "Firebase", icon: <Flame size={18} className="text-amber-600" />, level: 80, note: "Auth, Firestore, Cloud Storage" }
+        { name: "Firebase", icon: <Flame size={18} className="text-amber-600" />, level: 80, note: "Auth, Firestore, Cloud Storage" },
+        { name: "SQL", icon: <Database size={18} className="text-cyan-700" />, level: 75, note: "Relational modeling, Joins, queries" }
       ]
     },
     {
       title: "Tools & Collaboration",
       subtitle: "Version control and team development workflows",
       skills: [
-        { name: "Git & GitHub", icon: <GitBranch size={18} className="text-orange-700" />, level: 85, note: "Pull requests, branch splits, merge conflicts" }
+        { name: "Git & GitHub", icon: <GitBranch size={18} className="text-orange-700" />, level: 85, note: "Pull requests, branch splits, merge conflicts" },
+        { name: "VS Code", icon: <Code size={18} className="text-blue-500" />, level: 80, note: "Extensions, debugging, customization" },
+        { name: "Vercel", icon: <Cloud size={18} className="text-slate-400" />, level: 70, note: "Cloud hosting, production deployments" },
+        { name: "Render", icon: <Server size={18} className="text-violet-500" />, level: 70, note: "Web service hosting, backend deployments" },
+        { name: "Antigravity", icon: <Atom size={18} className="text-emerald-500" />, level: 75, note: "Advanced agentic coding workspace" }
       ]
     }
   ];

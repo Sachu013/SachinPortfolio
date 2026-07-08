@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, GraduationCap, Award, ShieldCheck, Terminal, Database } from 'lucide-react';
+import { Calendar, GraduationCap, Code2, Cloud, Layout, Network } from 'lucide-react';
 
 export default function Education() {
   const academics = [
@@ -29,28 +29,28 @@ export default function Education() {
 
   const certifications = [
     {
-      title: "Meta Front-End Development",
-      issuer: "Meta (via Coursera)",
-      icon: <Award className="text-cyan-600" size={16} />,
-      skills: "React, ES6 JS, UI/UX, Responsive Frameworks"
+      title: "Java Programming Course (Self-Paced)",
+      issuer: "GeeksforGeeks | 2026",
+      icon: <Code2 className="text-amber-500" size={16} />,
+      skills: "Data Structures, Algorithms, Object-Oriented Programming"
     },
     {
-      title: "Cisco Networking Basics",
+      title: "AWS Educate: Introduction to Cloud 101",
+      issuer: "Amazon Web Services (AWS)",
+      icon: <Cloud className="text-sky-500" size={16} />,
+      skills: "Cloud Computing foundations, AWS services, virtualization"
+    },
+    {
+      title: "Introduction to Front-End Development",
+      issuer: "Meta | 2025",
+      icon: <Layout className="text-blue-500" size={16} />,
+      skills: "HTML5, CSS3, UX design principles, modern responsive styling"
+    },
+    {
+      title: "Networking Basics",
       issuer: "Cisco Networking Academy",
-      icon: <ShieldCheck className="text-indigo-600" size={16} />,
-      skills: "Subnetting, Routing, Switching, Network Security"
-    },
-    {
-      title: "Python Essentials",
-      issuer: "Python Institute (Cisco Acad)",
-      icon: <Terminal className="text-emerald-600" size={16} />,
-      skills: "Object-Oriented Programming, Scripting, Modules"
-    },
-    {
-      title: "Introduction to Data Science",
-      issuer: "Cognitive Class (IBM)",
-      icon: <Database className="text-rose-600" size={16} />,
-      skills: "Data Wrangling, Analytics, Jupyter notebooks"
+      icon: <Network className="text-cyan-500" size={16} />,
+      skills: "Network protocols, OSI models, routing & switching basics"
     }
   ];
 
