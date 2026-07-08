@@ -69,23 +69,23 @@ export default function Skills() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <span className="text-[10px] font-bold tracking-widest text-premium-teal uppercase font-display block">
+        <div className="text-center mb-24">
+          <span className="text-xs sm:text-sm font-bold tracking-widest text-premium-teal uppercase font-display block mb-1">
             Capabilities
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-premium-black mt-2">
+          <h2 className="font-display text-4xl sm:text-5xl font-black tracking-tight text-premium-black mt-3 leading-tight">
             Skill <span className="text-premium-teal">Visualization.</span>
           </h2>
-          <div className="w-12 h-1 bg-premium-teal mx-auto mt-4 rounded-full" />
+          <div className="w-12 h-1 bg-premium-teal mx-auto mt-5 rounded-full" />
         </div>
 
         {/* Tab Selection */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-16 border-b border-premium-border pb-4">
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-20 border-b border-premium-border pb-5">
           {skillPillars.map((pillar, idx) => (
             <button
               key={idx}
               onClick={() => setActiveCategory(idx)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 relative ${
+              className={`px-6 py-3 rounded-full text-sm font-bold uppercase tracking-widest transition-all duration-300 relative ${
                 activeCategory === idx 
                   ? 'text-premium-white' 
                   : 'text-premium-gray hover:text-premium-black hover:bg-premium-beige'
@@ -104,11 +104,11 @@ export default function Skills() {
         </div>
 
         {/* Pillar Subtitle Description */}
-        <div className="text-center max-w-xl mx-auto mb-12">
-          <p className="text-sm font-semibold text-premium-teal uppercase tracking-wider mb-1 font-display">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-sm sm:text-base font-bold text-premium-teal uppercase tracking-widest mb-2 font-display">
             {skillPillars[activeCategory].title}
           </p>
-          <p className="text-xs text-premium-gray">
+          <p className="text-base sm:text-lg text-premium-gray leading-relaxed">
             {skillPillars[activeCategory].subtitle}
           </p>
         </div>
@@ -119,7 +119,7 @@ export default function Skills() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {skillPillars[activeCategory].skills.map((skill, skillIdx) => {
             // Circular SVG calculations
@@ -131,18 +131,18 @@ export default function Skills() {
               <motion.div
                 key={skillIdx}
                 variants={cardVariants}
-                className="premium-glass p-6 rounded-3xl border border-premium-border flex items-center justify-between group hover:border-premium-teal/40 transition-editorial cursor-pointer"
+                className="premium-glass p-6 sm:p-8 rounded-3xl border border-premium-border flex items-center justify-between group hover:border-premium-teal/40 transition-editorial cursor-pointer"
               >
                 <div className="flex items-center space-x-4">
                   {/* Icon */}
-                  <div className="p-3 rounded-2xl bg-premium-beige border border-premium-border group-hover:scale-110 transition-transform duration-300">
+                  <div className="p-3.5 rounded-2xl bg-premium-beige border border-premium-border group-hover:scale-110 transition-transform duration-300">
                     {skill.icon}
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-premium-black font-display">
+                    <h3 className="text-base sm:text-lg font-black text-premium-black font-display">
                       {skill.name}
                     </h3>
-                    <p className="text-[10px] text-premium-gray mt-1 font-medium italic">
+                    <p className="text-xs sm:text-sm text-premium-gray mt-1.5 font-semibold italic">
                       {skill.note}
                     </p>
                   </div>
@@ -173,7 +173,7 @@ export default function Skills() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  <span className="absolute text-[10px] font-bold text-premium-black font-display">
+                  <span className="absolute text-xs sm:text-sm font-black text-premium-black font-display">
                     {skill.level}%
                   </span>
                 </div>

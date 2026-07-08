@@ -59,7 +59,7 @@ export default function Hero() {
     <section
       ref={containerRef}
       style={spotlightStyle}
-      className="relative min-h-screen flex items-center justify-center pt-32 pb-16 overflow-hidden bg-premium-white light-grid-bg"
+      className="relative min-h-screen flex items-center justify-center pt-40 pb-24 sm:pt-48 sm:pb-32 overflow-hidden bg-premium-white light-grid-bg"
     >
       {/* Interactive Cursor Spotlight Glow */}
       <div className="cursor-glow pointer-events-none absolute inset-0 z-0" />
@@ -86,10 +86,10 @@ export default function Hero() {
             className="lg:col-span-7 space-y-8"
           >
             {/* Minimal Badge */}
-            <div className="overflow-hidden h-fit">
+            <div className="overflow-hidden h-fit mb-2">
               <motion.div
                 variants={textRevealVariants}
-                className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-premium-beige border border-premium-border text-premium-teal text-[10px] font-bold uppercase tracking-widest"
+                className="inline-flex items-center space-x-2.5 px-4.5 py-2 rounded-full bg-premium-beige border border-premium-border text-premium-teal text-xs sm:text-sm font-bold uppercase tracking-widest"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-premium-teal animate-pulse" />
                 <span>B.Tech Computer Science & Business Systems</span>
@@ -97,7 +97,7 @@ export default function Hero() {
             </div>
 
             {/* Headline Reveal */}
-            <div className="space-y-3">
+            <div className="space-y-4">
               <div className="overflow-hidden">
                 <motion.h1 
                   variants={textRevealVariants}
@@ -120,7 +120,7 @@ export default function Hero() {
             <div className="overflow-hidden">
               <motion.p
                 variants={textRevealVariants}
-                className="text-base sm:text-lg text-premium-gray max-w-xl leading-relaxed"
+                className="text-lg sm:text-xl text-premium-gray max-w-2xl leading-relaxed mt-4"
               >
                 Aspiring Software Engineer, Full Stack Developer, and Java Enthusiast. I build optimized web applications, write scalable backend architectures, and focus on algorithmic performance.
               </motion.p>
@@ -129,22 +129,22 @@ export default function Hero() {
             {/* Action Buttons Staggered */}
             <motion.div
               variants={textRevealVariants}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5 w-full sm:w-auto pt-6"
             >
               <a
                 href="#projects"
-                className="group flex items-center justify-center space-x-2 px-7 py-3.5 rounded-full bg-premium-black hover:bg-premium-teal text-premium-white text-xs font-bold uppercase tracking-widest transition-colors duration-300 shadow-md shadow-premium-black/5"
+                className="group flex items-center justify-center space-x-2 px-9 py-4 rounded-full bg-premium-black hover:bg-premium-teal text-premium-white text-sm font-bold uppercase tracking-widest transition-colors duration-300 shadow-md shadow-premium-black/5"
               >
                 <span>View Projects</span>
-                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
 
               <a
                 href="/Sachin_Suresh_Resume.pdf"
                 download="Sachin_Suresh_Resume.pdf"
-                className="flex items-center justify-center space-x-2 px-7 py-3.5 rounded-full bg-premium-beige hover:bg-[#eae9e2] border border-premium-border text-premium-black text-xs font-bold uppercase tracking-widest transition-colors duration-300"
+                className="flex items-center justify-center space-x-2 px-8 py-4 rounded-full bg-premium-beige hover:bg-premium-white/10 border border-premium-border text-premium-black text-sm font-bold uppercase tracking-widest transition-colors duration-300"
               >
-                <FileText size={14} />
+                <FileText size={16} />
                 <span>Download Resume</span>
               </a>
             </motion.div>

@@ -72,25 +72,25 @@ export default function Education() {
   };
 
   return (
-    <section id="education" className="py-32 relative bg-premium-white overflow-hidden">
+    <section id="education" className="py-40 sm:py-48 relative bg-premium-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-24">
-          <span className="text-[10px] font-bold tracking-widest text-premium-teal uppercase font-display block">
+        <div className="text-center mb-28">
+          <span className="text-xs sm:text-sm font-bold tracking-widest text-premium-teal uppercase font-display block mb-1">
             Timeline
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-premium-black mt-2">
+          <h2 className="font-display text-4xl sm:text-5xl font-black tracking-tight text-premium-black mt-3 leading-tight">
             Academics & <span className="text-premium-teal">Credentials.</span>
           </h2>
-          <div className="w-12 h-1 bg-premium-teal mx-auto mt-4 rounded-full" />
+          <div className="w-12 h-1 bg-premium-teal mx-auto mt-5 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 lg:gap-16 items-start">
           
           {/* Left half: Academic Timeline */}
           <div className="lg:col-span-6 space-y-12">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-premium-gray mb-8 pl-4 border-l-2 border-premium-teal font-display">
+            <h3 className="text-lg sm:text-xl font-black uppercase tracking-wider text-premium-teal mb-10 pl-4 border-l-4 border-premium-teal font-display">
               Academic Milestones
             </h3>
             
@@ -99,7 +99,7 @@ export default function Education() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-50px' }}
-              className="relative border-l border-premium-border pl-6 sm:pl-8 space-y-10 ml-2"
+              className="relative border-l border-premium-border pl-6 sm:pl-8 space-y-14 ml-2"
             >
               {academics.map((edu, idx) => (
                 <motion.div
@@ -112,24 +112,24 @@ export default function Education() {
                     <GraduationCap size={12} />
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="inline-flex items-center space-x-1 text-[10px] font-bold text-premium-gray uppercase tracking-widest">
-                        <Calendar size={10} />
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <span className="inline-flex items-center space-x-1.5 text-xs sm:text-sm font-bold text-premium-gray uppercase tracking-widest">
+                        <Calendar size={12} />
                         <span>{edu.duration}</span>
                       </span>
-                      <span className="px-2.5 py-0.5 rounded-full bg-premium-teal/10 border border-premium-teal/20 text-premium-teal text-[10px] font-bold uppercase tracking-wider">
+                      <span className="px-3.5 py-1 rounded-full bg-premium-teal/10 border border-premium-teal/20 text-premium-teal text-xs sm:text-sm font-bold uppercase tracking-wider">
                         {edu.metrics}
                       </span>
                     </div>
 
-                    <h4 className="text-base font-extrabold text-premium-black tracking-tight font-display">
+                    <h4 className="text-xl sm:text-2xl font-black text-premium-black tracking-tight font-display">
                       {edu.degree}
                     </h4>
-                    <p className="text-xs font-semibold text-premium-teal uppercase tracking-wider">
+                    <p className="text-sm sm:text-base font-bold text-premium-teal uppercase tracking-wider">
                       {edu.institution}
                     </p>
-                    <p className="text-sm sm:text-base text-premium-gray leading-relaxed max-w-xl pt-1">
+                    <p className="text-base sm:text-lg text-premium-gray leading-relaxed max-w-xl pt-2">
                       {edu.description}
                     </p>
                   </div>
@@ -140,7 +140,7 @@ export default function Education() {
 
           {/* Right half: Professional Certifications */}
           <div className="lg:col-span-6 space-y-12">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-premium-gray mb-8 pl-4 border-l-2 border-premium-teal font-display">
+            <h3 className="text-lg sm:text-xl font-black uppercase tracking-wider text-premium-teal mb-10 pl-4 border-l-4 border-premium-teal font-display">
               Professional Badges
             </h3>
 
@@ -149,7 +149,7 @@ export default function Education() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-50px' }}
-              className="relative border-l border-premium-border pl-6 sm:pl-8 space-y-10 ml-2"
+              className="relative border-l border-premium-border pl-6 sm:pl-8 space-y-14 ml-2"
             >
               {certifications.map((cert, idx) => (
                 <motion.div
@@ -162,18 +162,18 @@ export default function Education() {
                     {cert.icon}
                   </div>
 
-                  <div className="space-y-2">
-                    <span className="text-[9px] font-bold text-premium-gray uppercase tracking-widest block">
+                  <div className="space-y-3">
+                    <span className="text-xs font-bold text-premium-gray uppercase tracking-widest block">
                       {cert.issuer}
                     </span>
-                    <h4 className="text-base font-extrabold text-premium-black tracking-tight font-display">
+                    <h4 className="text-xl sm:text-2xl font-black text-premium-black tracking-tight font-display">
                       {cert.title}
                     </h4>
-                    <div className="pt-1.5">
-                      <span className="text-[9px] font-bold text-premium-gray uppercase tracking-wider block mb-1">
+                    <div className="pt-2">
+                      <span className="text-xs font-bold text-premium-gray uppercase tracking-wider block mb-1.5">
                         Core Competency
                       </span>
-                      <p className="text-sm sm:text-base text-premium-gray leading-relaxed">
+                      <p className="text-base sm:text-lg text-premium-gray leading-relaxed">
                         {cert.skills}
                       </p>
                     </div>

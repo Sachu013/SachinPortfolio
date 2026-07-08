@@ -72,49 +72,49 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-32 relative bg-premium-white overflow-hidden">
+    <section id="contact" className="py-40 sm:py-48 relative bg-premium-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-24">
-          <span className="text-[10px] font-bold tracking-widest text-premium-teal uppercase font-display block">
+        <div className="text-center mb-28">
+          <span className="text-xs sm:text-sm font-bold tracking-widest text-premium-teal uppercase font-display block mb-1">
             Inbox
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-premium-black mt-2">
+          <h2 className="font-display text-4xl sm:text-5xl font-black tracking-tight text-premium-black mt-3 leading-tight">
             Let's <span className="text-premium-teal">Connect.</span>
           </h2>
-          <div className="w-12 h-1 bg-premium-teal mx-auto mt-4 rounded-full" />
+          <div className="w-12 h-1 bg-premium-teal mx-auto mt-5 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
           
           {/* Left half: Details */}
-          <div className="lg:col-span-5 space-y-8">
-            <h3 className="text-xl sm:text-2xl font-extrabold text-premium-black font-display tracking-tight leading-snug">
+          <div className="lg:col-span-5 space-y-10">
+            <h3 className="text-2xl sm:text-3xl font-black text-premium-black font-display tracking-tight leading-snug">
               Have an opening or project idea?
             </h3>
             
-            <p className="text-sm sm:text-base text-premium-gray leading-relaxed max-w-md">
+            <p className="text-base sm:text-lg text-premium-gray leading-relaxed max-w-md">
               I am open to software engineering placements, full-stack internships, and technical research opportunities. Drop me a note and let's align.
             </p>
 
-            <div className="space-y-4 pt-4">
+            <div className="space-y-5 pt-4">
               {contactDetails.map((item, idx) => (
                 <a
                   key={idx}
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="premium-glass p-5 rounded-2xl border border-premium-border flex items-center space-x-4 hover:border-premium-teal/30 hover:shadow-md hover:shadow-premium-teal/[0.01] transition-editorial"
+                  className="premium-glass p-6 rounded-2xl border border-premium-border flex items-center space-x-5 hover:border-premium-teal/30 hover:shadow-md hover:shadow-premium-teal/[0.01] transition-editorial"
                 >
-                  <div className="p-3 rounded-xl bg-premium-beige border border-premium-border">
+                  <div className="p-3.5 rounded-xl bg-premium-beige border border-premium-border">
                     {item.icon}
                   </div>
                   <div>
-                    <span className="text-[9px] font-bold text-premium-gray uppercase tracking-widest block">
+                    <span className="text-xs font-bold text-premium-teal uppercase tracking-widest block mb-1">
                       {item.label}
                     </span>
-                    <span className="text-sm font-bold text-premium-black font-display">
+                    <span className="text-base sm:text-lg font-black text-premium-black font-display">
                       {item.value}
                     </span>
                   </div>
@@ -137,15 +137,15 @@ export default function Contact() {
                     <div className="p-3 rounded-full bg-premium-teal/10 text-premium-teal mb-6 border border-premium-teal/20">
                       <CheckCircle2 size={36} className="animate-bounce" />
                     </div>
-                    <h4 className="text-xl font-bold text-premium-black mb-2 font-display">
+                    <h4 className="text-2xl font-black text-premium-black mb-3 font-display">
                       Message Dispatched!
                     </h4>
-                    <p className="text-premium-gray text-xs sm:text-sm max-w-xs mb-8 leading-relaxed">
+                    <p className="text-premium-gray text-base sm:text-lg max-w-sm mb-10 leading-relaxed">
                       Thank you. Your message has been sent successfully. I will get back to you shortly.
                     </p>
                     <button
                       onClick={() => setStatus('idle')}
-                      className="px-6 py-2.5 rounded-full border border-premium-border hover:bg-premium-beige text-premium-black text-xs font-bold uppercase tracking-widest transition"
+                      className="px-8 py-3.5 rounded-full border border-premium-border hover:bg-premium-beige text-premium-black text-sm font-bold uppercase tracking-widest transition"
                     >
                       Send Another
                     </button>
@@ -156,11 +156,11 @@ export default function Contact() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     onSubmit={handleSubmit}
-                    className="space-y-6"
+                    className="space-y-8"
                     noValidate
                   >
                     {/* Grid Name & Email */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                       {/* Name */}
                       <div className="relative border-b border-premium-border/80 focus-within:border-premium-teal transition-colors duration-300 py-1">
                         <input
@@ -171,18 +171,18 @@ export default function Contact() {
                           onChange={handleChange}
                           disabled={status === 'sending'}
                           required
-                          className="w-full bg-transparent border-none text-premium-black text-sm focus:outline-none placeholder-transparent peer pt-5 pb-1"
+                          className="w-full bg-transparent border-none text-premium-black text-base sm:text-lg focus:outline-none placeholder-transparent peer pt-6 pb-2"
                           placeholder="Name"
                         />
                         <label
                           htmlFor="name"
-                          className="absolute left-0 top-1 text-xs font-bold text-premium-gray uppercase tracking-wider transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-premium-teal"
+                          className="absolute left-0 top-1 text-sm font-bold text-premium-gray uppercase tracking-wider transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm peer-focus:text-premium-teal"
                         >
                           Name
                         </label>
                         {errors.name && (
-                          <span className="text-[10px] text-red-500 mt-1 flex items-center space-x-1">
-                            <AlertCircle size={10} />
+                          <span className="text-xs text-red-500 mt-1.5 flex items-center space-x-1">
+                            <AlertCircle size={12} />
                             <span>{errors.name}</span>
                           </span>
                         )}
@@ -198,18 +198,18 @@ export default function Contact() {
                           onChange={handleChange}
                           disabled={status === 'sending'}
                           required
-                          className="w-full bg-transparent border-none text-premium-black text-sm focus:outline-none placeholder-transparent peer pt-5 pb-1"
+                          className="w-full bg-transparent border-none text-premium-black text-base sm:text-lg focus:outline-none placeholder-transparent peer pt-6 pb-2"
                           placeholder="Email"
                         />
                         <label
                           htmlFor="email"
-                          className="absolute left-0 top-1 text-xs font-bold text-premium-gray uppercase tracking-wider transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-premium-teal"
+                          className="absolute left-0 top-1 text-sm font-bold text-premium-gray uppercase tracking-wider transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm peer-focus:text-premium-teal"
                         >
                           Email Address
                         </label>
                         {errors.email && (
-                          <span className="text-[10px] text-red-500 mt-1 flex items-center space-x-1">
-                            <AlertCircle size={10} />
+                          <span className="text-xs text-red-500 mt-1.5 flex items-center space-x-1">
+                            <AlertCircle size={12} />
                             <span>{errors.email}</span>
                           </span>
                         )}
@@ -226,18 +226,18 @@ export default function Contact() {
                         onChange={handleChange}
                         disabled={status === 'sending'}
                         required
-                        className="w-full bg-transparent border-none text-premium-black text-sm focus:outline-none placeholder-transparent peer pt-5 pb-1"
+                        className="w-full bg-transparent border-none text-premium-black text-base sm:text-lg focus:outline-none placeholder-transparent peer pt-6 pb-2"
                         placeholder="Subject"
                       />
                       <label
                         htmlFor="subject"
-                        className="absolute left-0 top-1 text-xs font-bold text-premium-gray uppercase tracking-wider transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-premium-teal"
+                        className="absolute left-0 top-1 text-sm font-bold text-premium-gray uppercase tracking-wider transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm peer-focus:text-premium-teal"
                       >
                         Subject
                       </label>
                       {errors.subject && (
-                        <span className="text-[10px] text-red-500 mt-1 flex items-center space-x-1">
-                          <AlertCircle size={10} />
+                        <span className="text-xs text-red-500 mt-1.5 flex items-center space-x-1">
+                          <AlertCircle size={12} />
                           <span>{errors.subject}</span>
                         </span>
                       )}
@@ -253,28 +253,28 @@ export default function Contact() {
                         disabled={status === 'sending'}
                         required
                         rows={3}
-                        className="w-full bg-transparent border-none text-premium-black text-sm focus:outline-none placeholder-transparent peer resize-none pt-5 pb-1"
+                        className="w-full bg-transparent border-none text-premium-black text-base sm:text-lg focus:outline-none placeholder-transparent peer resize-none pt-6 pb-2"
                         placeholder="Message"
                       />
                       <label
                         htmlFor="message"
-                        className="absolute left-0 top-1 text-xs font-bold text-premium-gray uppercase tracking-wider transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-premium-teal"
+                        className="absolute left-0 top-1 text-sm font-bold text-premium-gray uppercase tracking-wider transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm peer-focus:text-premium-teal"
                       >
                         Message
                       </label>
                       {errors.message && (
-                        <span className="text-[10px] text-red-500 mt-1 flex items-center space-x-1">
-                          <AlertCircle size={10} />
+                        <span className="text-xs text-red-500 mt-1.5 flex items-center space-x-1">
+                          <AlertCircle size={12} />
                           <span>{errors.message}</span>
                         </span>
                       )}
                     </div>
 
-                    {/* Submit Button */}
+                     {/* Submit Button */}
                     <button
                       type="submit"
                       disabled={status === 'sending'}
-                      className="w-full flex items-center justify-center space-x-2 py-4 rounded-full bg-premium-black hover:bg-premium-teal text-premium-white text-xs font-bold uppercase tracking-widest transition-colors duration-300 disabled:opacity-50"
+                      className="w-full flex items-center justify-center space-x-2.5 py-5 px-8 rounded-2xl bg-premium-black hover:bg-premium-teal text-premium-white text-sm font-bold uppercase tracking-widest transition-colors duration-300 disabled:opacity-50"
                     >
                       {status === 'sending' ? (
                         <>
@@ -283,7 +283,7 @@ export default function Contact() {
                         </>
                       ) : (
                         <>
-                          <Send size={12} />
+                          <Send size={16} />
                           <span>Send Message</span>
                         </>
                       )}

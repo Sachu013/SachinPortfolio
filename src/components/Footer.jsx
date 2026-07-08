@@ -25,16 +25,16 @@ export default function Footer() {
           
           {/* Brand info */}
           <div className="text-center md:text-left space-y-2">
-            <span className="font-display font-black text-base tracking-tight text-premium-black">
+            <span className="font-display font-black text-lg tracking-tight text-premium-black">
               SS<span className="text-premium-teal">.</span>
             </span>
-            <p className="text-xs text-premium-gray max-w-xs leading-relaxed">
+            <p className="text-sm sm:text-base text-premium-gray max-w-xs leading-relaxed">
               B.Tech Computer Science & Business Systems student specializing in high-performance web products.
             </p>
           </div>
 
           {/* Social connections */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
             {socialLinks.map((item, idx) => (
               <a
                 key={idx}
@@ -51,20 +51,20 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-10 text-center sm:text-left">
-          <p className="text-[10px] sm:text-xs text-premium-gray">
+          <p className="text-xs sm:text-sm text-premium-gray">
             &copy; {currentYear} Sachin Suresh. Handcrafted with React and Tailwind.
           </p>
 
-          <div className="flex items-center space-x-6 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-premium-gray">
+          <div className="flex items-center space-x-6 text-xs sm:text-sm font-bold uppercase tracking-widest text-premium-gray">
             <a href="#skills" className="hover:text-premium-black transition-colors">Skills</a>
             <a href="#projects" className="hover:text-premium-black transition-colors">Work</a>
             <a
               href="#"
               onClick={handleScrollTop}
-              className="p-2 rounded-full bg-premium-white border border-premium-border text-premium-gray hover:text-premium-teal hover:-translate-y-0.5 transition-all"
+              className="p-2.5 rounded-full bg-premium-white border border-premium-border text-premium-gray hover:text-premium-teal hover:-translate-y-0.5 transition-all"
               aria-label="Scroll to top"
             >
-              <ArrowUp size={12} />
+              <ArrowUp size={14} />
             </a>
           </div>
         </div>

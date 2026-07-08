@@ -92,20 +92,20 @@ function ProjectCard({ project }) {
         style={{ transform: "translateZ(15px)" }}
         className="p-6 sm:p-8 flex flex-col flex-1"
       >
-        <h3 className="text-lg sm:text-xl font-extrabold text-premium-black tracking-tight mb-2 font-display">
+        <h3 className="text-xl sm:text-2xl font-black text-premium-black tracking-tight mb-3.5 font-display">
           {project.title}
         </h3>
         
-        <p className="text-sm sm:text-base text-premium-gray leading-relaxed mb-6 flex-1">
+        <p className="text-base sm:text-lg text-premium-gray leading-relaxed mb-8 flex-1">
           {project.description}
         </p>
 
         {/* Tech Badges */}
-        <div className="flex flex-wrap gap-1.5 mb-6">
+        <div className="flex flex-wrap gap-2 mb-8">
           {project.tech.map((t, tIdx) => (
             <span
               key={tIdx}
-              className="px-2.5 py-1 rounded-full bg-premium-beige border border-premium-border text-premium-gray text-[10px] font-bold uppercase tracking-wider"
+              className="px-3 py-1.5 rounded-full bg-premium-beige border border-premium-border text-premium-gray text-xs font-bold uppercase tracking-wider"
             >
               {t}
             </span>
@@ -113,24 +113,24 @@ function ProjectCard({ project }) {
         </div>
 
         {/* Buttons Grid */}
-        <div className="grid grid-cols-2 gap-3 mt-auto">
+        <div className="grid grid-cols-2 gap-4 mt-auto">
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center space-x-1.5 py-3 px-4 rounded-full bg-premium-beige hover:bg-[#eae9e2] border border-premium-border text-premium-black text-xs font-bold uppercase tracking-widest transition-colors duration-300"
+            className="flex items-center justify-center space-x-2 py-3.5 px-5 rounded-full bg-premium-beige hover:bg-premium-white/10 border border-premium-border text-premium-black text-sm font-bold uppercase tracking-widest transition-colors duration-300"
           >
-            <Github size={14} />
+            <Github size={16} />
             <span>GitHub</span>
           </a>
           <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center space-x-1.5 py-3 px-4 rounded-full bg-premium-black hover:bg-premium-teal text-premium-white text-xs font-bold uppercase tracking-widest transition-colors duration-300 shadow-md shadow-premium-black/5"
+            className="flex items-center justify-center space-x-2 py-3.5 px-5 rounded-full bg-premium-black hover:bg-premium-teal text-premium-white text-sm font-bold uppercase tracking-widest transition-colors duration-300 shadow-md shadow-premium-black/5"
           >
             <span>Live Demo</span>
-            <ArrowUpRight size={14} />
+            <ArrowUpRight size={16} />
           </a>
         </div>
       </div>
@@ -167,22 +167,22 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-32 relative bg-premium-beige border-y border-premium-border/40">
+    <section id="projects" className="py-40 sm:py-48 relative bg-premium-beige border-y border-premium-border/40">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <span className="text-[10px] font-bold tracking-widest text-premium-teal uppercase font-display block">
+        <div className="text-center mb-24">
+          <span className="text-xs sm:text-sm font-bold tracking-widest text-premium-teal uppercase font-display block mb-1">
             Portfolio
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-premium-black mt-2">
+          <h2 className="font-display text-4xl sm:text-5xl font-black tracking-tight text-premium-black mt-3 leading-tight">
             Showcase <span className="text-premium-teal">Projects.</span>
           </h2>
-          <div className="w-12 h-1 bg-premium-teal mx-auto mt-4 rounded-full" />
+          <div className="w-12 h-1 bg-premium-teal mx-auto mt-5 rounded-full" />
         </div>
 
         {/* Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} />
           ))}
