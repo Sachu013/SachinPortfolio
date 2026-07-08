@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Coffee, Binary, Boxes, Atom, Server, Cpu, 
@@ -6,37 +6,43 @@ import {
 } from 'lucide-react';
 
 export default function Skills() {
-  const skillCategories = [
+  const [activeCategory, setActiveCategory] = useState(0);
+
+  const skillPillars = [
     {
       title: "Core & Programming",
+      subtitle: "Foundations of computational thinking",
       skills: [
-        { name: "Java", icon: <Coffee className="text-amber-500" />, level: 90 },
-        { name: "Data Structures & Algorithms", icon: <Binary className="text-emerald-500" />, level: 85 },
-        { name: "Object-Oriented Programming", icon: <Boxes className="text-indigo-500" />, level: 85 },
-        { name: "JavaScript", icon: <FileCode className="text-yellow-500" />, level: 80 }
+        { name: "Java", icon: <Coffee size={18} className="text-amber-600" />, level: 90, note: "Multithreading, OOPs, Collections" },
+        { name: "Data Structures & Algorithms", icon: <Binary size={18} className="text-emerald-600" />, level: 85, note: "Searching, Sorting, Trees, Graphs" },
+        { name: "Object-Oriented Programming", icon: <Boxes size={18} className="text-indigo-600" />, level: 85, note: "Design patterns, Abstraction, Polymorphism" },
+        { name: "JavaScript (ES6+)", icon: <FileCode size={18} className="text-yellow-600" />, level: 80, note: "Async/Await, DOM, Event loop" }
       ]
     },
     {
-      title: "Frontend Development",
+      title: "Frontend Engineering",
+      subtitle: "Building responsive, modern interfaces",
       skills: [
-        { name: "React.js", icon: <Atom className="text-cyan-400" />, level: 85 },
-        { name: "HTML5", icon: <Code className="text-orange-500" />, level: 90 },
-        { name: "CSS3 & Tailwind", icon: <Layers className="text-sky-400" />, level: 85 }
+        { name: "React.js", icon: <Atom size={18} className="text-cyan-600" />, level: 85, note: "Hooks, Context API, Virtual DOM" },
+        { name: "Tailwind CSS & Vanilla CSS", icon: <Layers size={18} className="text-sky-600" />, level: 85, note: "Grids, flexbox, custom themes" },
+        { name: "HTML5 Structure", icon: <Code size={18} className="text-orange-600" />, level: 90, note: "Semantic elements, SEO optimization" }
       ]
     },
     {
       title: "Backend & Databases",
+      subtitle: "Handling logic, APIs, and data modeling",
       skills: [
-        { name: "Node.js", icon: <Server className="text-green-500" />, level: 75 },
-        { name: "Express.js", icon: <Cpu className="text-gray-400" />, level: 75 },
-        { name: "MongoDB", icon: <Database className="text-green-600" />, level: 80 },
-        { name: "Firebase", icon: <Flame className="text-amber-600" />, level: 80 }
+        { name: "Node.js", icon: <Server size={18} className="text-green-600" />, level: 75, note: "REST APIs, Event loop, File systems" },
+        { name: "Express.js", icon: <Cpu size={18} className="text-slate-600" />, level: 75, note: "Middlewares, routing, error handling" },
+        { name: "MongoDB", icon: <Database size={18} className="text-green-700" />, level: 80, note: "Aggregation, Mongoose, indexing" },
+        { name: "Firebase", icon: <Flame size={18} className="text-amber-600" />, level: 80, note: "Auth, Firestore, Cloud Storage" }
       ]
     },
     {
-      title: "Tools & DevOps",
+      title: "Tools & Collaboration",
+      subtitle: "Version control and team development workflows",
       skills: [
-        { name: "Git & GitHub", icon: <GitBranch className="text-orange-600" />, level: 85 }
+        { name: "Git & GitHub", icon: <GitBranch size={18} className="text-orange-700" />, level: 85, note: "Pull requests, branch splits, merge conflicts" }
       ]
     }
   ];
@@ -54,73 +60,128 @@ export default function Skills() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: 'spring', stiffness: 80, damping: 12 }
+      transition: { type: 'spring', stiffness: 90, damping: 15 }
     }
   };
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-[#05060d]">
-      {/* Decorative background glow */}
-      <div className="absolute top-1/4 right-0 w-80 h-80 rounded-full bg-brand-purple/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-80 h-80 rounded-full bg-brand-blue/5 blur-[120px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="skills" className="py-32 relative bg-premium-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-white">
-            Technical <span className="bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent">Skills</span>
+        <div className="text-center mb-20">
+          <span className="text-[10px] font-bold tracking-widest text-premium-teal uppercase font-display block">
+            Capabilities
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-premium-black mt-2">
+            Skill <span className="text-stroke text-premium-black">Visualization.</span>
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-brand-blue to-brand-purple mx-auto mt-4 rounded-full" />
+          <div className="w-12 h-1 bg-premium-teal mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Categories Grid */}
+        {/* Tab Selection */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-16 border-b border-premium-border pb-4">
+          {skillPillars.map((pillar, idx) => (
+            <button
+              key={idx}
+              onClick={() => setActiveCategory(idx)}
+              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 relative ${
+                activeCategory === idx 
+                  ? 'text-premium-white' 
+                  : 'text-premium-gray hover:text-premium-black hover:bg-premium-beige'
+              }`}
+            >
+              <span className="relative z-10">{pillar.title}</span>
+              {activeCategory === idx && (
+                <motion.div
+                  layoutId="activeSkillTab"
+                  className="absolute inset-0 bg-premium-teal rounded-full z-0"
+                  transition={{ type: 'spring', stiffness: 220, damping: 20 }}
+                />
+              )}
+            </button>
+          ))}
+        </div>
+
+        {/* Pillar Subtitle Description */}
+        <div className="text-center max-w-xl mx-auto mb-12">
+          <p className="text-sm font-semibold text-premium-teal uppercase tracking-wider mb-1 font-display">
+            {skillPillars[activeCategory].title}
+          </p>
+          <p className="text-xs text-premium-gray">
+            {skillPillars[activeCategory].subtitle}
+          </p>
+        </div>
+
+        {/* Skills Grid */}
         <motion.div
+          key={activeCategory}
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {skillCategories.map((category, catIdx) => (
-            <motion.div
-              key={catIdx}
-              variants={cardVariants}
-              className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/5 bg-[#0d1127]/30"
-            >
-              <h3 className="text-lg font-bold text-white mb-6 border-b border-white/5 pb-3 tracking-wide font-display">
-                {category.title}
-              </h3>
+          {skillPillars[activeCategory].skills.map((skill, skillIdx) => {
+            // Circular SVG calculations
+            const radius = 32;
+            const circumference = 2 * Math.PI * radius;
+            const strokeDashoffset = circumference - (skill.level / 100) * circumference;
 
-              <div className="space-y-6">
-                {category.skills.map((skill, skillIdx) => (
-                  <div key={skillIdx} className="space-y-2">
-                    {/* Skill Info */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="p-2 rounded-xl bg-white/5 border border-white/5">
-                          {skill.icon}
-                        </div>
-                        <span className="text-sm font-semibold text-slate-200">{skill.name}</span>
-                      </div>
-                      <span className="text-xs font-semibold text-slate-400">{skill.level}%</span>
-                    </div>
-
-                    {/* Progress Bar */}
-                    <div className="h-2 w-full bg-slate-950 rounded-full overflow-hidden border border-white/5">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                        className="h-full bg-gradient-to-r from-brand-blue to-brand-purple rounded-full"
-                      />
-                    </div>
+            return (
+              <motion.div
+                key={skillIdx}
+                variants={cardVariants}
+                className="premium-glass p-6 rounded-3xl border border-premium-border flex items-center justify-between group hover:border-premium-teal/40 transition-editorial cursor-pointer"
+              >
+                <div className="flex items-center space-x-4">
+                  {/* Icon */}
+                  <div className="p-3 rounded-2xl bg-premium-beige border border-premium-border group-hover:scale-110 transition-transform duration-300">
+                    {skill.icon}
                   </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+                  <div>
+                    <h3 className="text-sm font-bold text-premium-black font-display">
+                      {skill.name}
+                    </h3>
+                    <p className="text-[10px] text-premium-gray mt-1 font-medium italic">
+                      {skill.note}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Circular Skill Tracker */}
+                <div className="relative w-16 h-16 flex-shrink-0 flex items-center justify-center">
+                  <svg className="w-full h-full -rotate-90">
+                    {/* Background Track */}
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r={radius}
+                      className="stroke-[#EBEAE3] fill-transparent"
+                      strokeWidth="2.5"
+                    />
+                    {/* Animated Fill Circle */}
+                    <motion.circle
+                      cx="32"
+                      cy="32"
+                      r={radius}
+                      className="stroke-premium-teal fill-transparent"
+                      strokeWidth="2.5"
+                      strokeDasharray={circumference}
+                      initial={{ strokeDashoffset: circumference }}
+                      animate={{ strokeDashoffset }}
+                      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  <span className="absolute text-[10px] font-bold text-premium-black font-display">
+                    {skill.level}%
+                  </span>
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
+
       </div>
     </section>
   );

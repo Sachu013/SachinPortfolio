@@ -1,200 +1,193 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Github, ExternalLink, BarChart3, MapPin, Share2 } from 'lucide-react';
+import React, { useRef } from 'react';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { Github, ExternalLink, ArrowUpRight } from 'lucide-react';
+import subscriptionImg from '../assets/subscription.png';
+import civicImg from '../assets/civic.png';
+
+// Individual Tilt Card Component for Performance Isolation
+function ProjectCard({ project }) {
+  const cardRef = useRef(null);
+  
+  // Motion values for 3D tilt
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  
+  // Transform coordinates to degree rotation
+  const rotateX = useTransform(y, [-150, 150], [10, -10]);
+  const rotateY = useTransform(x, [-150, 150], [-10, 10]);
+
+  const handleMouseMove = (event) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    
+    // Mouse offset relative to card center
+    const mouseX = event.clientX - rect.left - width / 2;
+    const mouseY = event.clientY - rect.top - height / 2;
+    
+    x.set(mouseX);
+    y.set(mouseY);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d"
+      }}
+      className="premium-glass rounded-3xl border border-premium-border bg-premium-white overflow-hidden flex flex-col h-full hover:shadow-xl hover:shadow-premium-teal/[0.02] hover:border-premium-teal/20 transition-all duration-300"
+    >
+      {/* Project Image Frame */}
+      <div 
+        style={{ transform: "translateZ(30px)" }}
+        className="h-56 bg-premium-beige border-b border-premium-border overflow-hidden relative group"
+      >
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+          />
+        ) : (
+          /* High-Fidelity Custom CSS/HTML Mockup for Campus Connect */
+          <div className="w-full h-full p-6 flex flex-col justify-between bg-gradient-to-tr from-[#FCFBF7] to-[#F5F4EF] relative">
+            <div className="flex items-center justify-between border-b border-premium-border/60 pb-3">
+              <span className="text-[10px] font-bold text-premium-teal tracking-widest font-display">CAMPUS FEED</span>
+              <span className="w-2.5 h-2.5 rounded-full bg-premium-teal" />
+            </div>
+            
+            <div className="space-y-3 relative z-10">
+              <div className="p-2.5 rounded-xl bg-premium-white border border-premium-border flex items-start space-x-3 shadow-sm">
+                <div className="w-5 h-5 rounded-full bg-premium-teal/20 flex-shrink-0 flex items-center justify-center text-[8px] font-bold text-premium-teal font-display">CS</div>
+                <div className="space-y-1.5 flex-1">
+                  <div className="h-2 w-16 bg-[#EBEAE3] rounded" />
+                  <div className="h-2 w-full bg-[#FCFBF7] border border-premium-border rounded" />
+                </div>
+              </div>
+            </div>
+
+            <div className="h-6 w-full rounded-xl bg-premium-teal/10 flex items-center justify-center border border-premium-teal/20">
+              <span className="text-[9px] font-bold text-premium-teal tracking-wider uppercase font-display">Firebase Sync: Online</span>
+            </div>
+            <div className="absolute top-1/2 left-1/2 w-48 h-48 rounded-full bg-premium-teal/5 blur-2xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+          </div>
+        )}
+        
+        {/* Subtle overlay hover cover */}
+        <div className="absolute inset-0 bg-premium-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      </div>
+
+      {/* Details Area */}
+      <div 
+        style={{ transform: "translateZ(15px)" }}
+        className="p-6 sm:p-8 flex flex-col flex-1"
+      >
+        <h3 className="text-lg sm:text-xl font-extrabold text-premium-black tracking-tight mb-2 font-display">
+          {project.title}
+        </h3>
+        
+        <p className="text-sm text-premium-gray leading-relaxed mb-6 flex-1">
+          {project.description}
+        </p>
+
+        {/* Tech Badges */}
+        <div className="flex flex-wrap gap-1.5 mb-6">
+          {project.tech.map((t, tIdx) => (
+            <span
+              key={tIdx}
+              className="px-2.5 py-1 rounded-full bg-[#F2F1EA] border border-premium-border text-premium-gray text-[10px] font-bold uppercase tracking-wider"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+
+        {/* Buttons Grid */}
+        <div className="grid grid-cols-2 gap-3 mt-auto">
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center space-x-1.5 py-3 px-4 rounded-full bg-premium-beige hover:bg-[#eae9e2] border border-premium-border text-premium-black text-xs font-bold uppercase tracking-widest transition-colors duration-300"
+          >
+            <Github size={14} />
+            <span>GitHub</span>
+          </a>
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center space-x-1.5 py-3 px-4 rounded-full bg-premium-black hover:bg-premium-teal text-premium-white text-xs font-bold uppercase tracking-widest transition-colors duration-300 shadow-md shadow-premium-black/5"
+          >
+            <span>Live Demo</span>
+            <ArrowUpRight size={14} />
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Projects() {
   const projects = [
     {
-      title: "Subscription Management System",
-      description: "A comprehensive SaaS licensing and subscription management platform built to help businesses track and manage client licenses, renewals, and payments seamlessly.",
-      tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "Tailwind CSS"],
+      title: "Subscription Management",
+      description: "A secure subscription licensing system engineered to help enterprise SaaS providers manage client contracts, trace renewals, and monitor licensing operations.",
+      tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
       github: "https://github.com",
       demo: "https://example.com",
-      graphic: (
-        <div className="w-full h-full bg-gradient-to-br from-brand-blue/20 to-brand-purple/20 flex flex-col justify-between p-6 relative overflow-hidden">
-          {/* Card Mockup Graphic */}
-          <div className="flex items-center justify-between border-b border-white/10 pb-3">
-            <span className="text-[10px] font-bold text-slate-400 font-display">SUBSCRIPTION FLOW</span>
-            <BarChart3 className="text-brand-blue" size={16} />
-          </div>
-          <div className="space-y-3">
-            <div className="h-6 w-full rounded bg-white/5 border border-white/5 flex items-center px-2 justify-between">
-              <span className="text-[8px] text-slate-300">Basic Tier License</span>
-              <span className="text-[8px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-semibold">Active</span>
-            </div>
-            <div className="h-6 w-full rounded bg-white/5 border border-white/5 flex items-center px-2 justify-between">
-              <span className="text-[8px] text-slate-300">Enterprise Suite</span>
-              <span className="text-[8px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400 font-semibold">Renewal Pending</span>
-            </div>
-          </div>
-          <div className="h-10 w-full rounded-lg bg-gradient-to-r from-brand-blue to-brand-purple opacity-70 flex items-center justify-center">
-            <span className="text-[9px] font-bold text-white tracking-wider uppercase">Analytics Dashboard</span>
-          </div>
-          <div className="absolute top-1/2 left-1/2 w-48 h-48 rounded-full bg-brand-blue/10 blur-2xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        </div>
-      )
+      image: subscriptionImg
     },
     {
-      title: "Civic Sense Reporting Platform",
-      description: "A civic engagement and complaint reporting system allowing citizens to file grievances, map incident areas, and leverage AI categorization for immediate authority routing.",
-      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "OpenAI API", "Google Maps"],
+      title: "Civic Sense Reporting",
+      description: "A civic engagement platform designed for municipal grievance management. Features geolocation reporting, status tracking, and AI issue classification routing.",
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "OpenAI", "Google Maps"],
       github: "https://github.com",
       demo: "https://example.com",
-      graphic: (
-        <div className="w-full h-full bg-gradient-to-br from-brand-purple/20 to-brand-pink/20 flex flex-col justify-between p-6 relative overflow-hidden">
-          {/* Card Mockup Graphic */}
-          <div className="flex items-center justify-between border-b border-white/10 pb-3">
-            <span className="text-[10px] font-bold text-slate-400 font-display">CIVIC REPORTING MAP</span>
-            <MapPin className="text-brand-purple" size={16} />
-          </div>
-          <div className="flex items-center justify-center flex-1">
-            <div className="w-20 h-20 rounded-full border-4 border-dashed border-brand-purple/30 flex items-center justify-center animate-spin [animation-duration:15s]">
-              <MapPin className="text-brand-pink -rotate-45" size={24} />
-            </div>
-            <div className="absolute p-2 bg-black/60 border border-white/10 rounded-xl text-center text-[8px] text-slate-300">
-              AI Categorized: <span className="text-brand-blue font-bold">Pothole</span>
-            </div>
-          </div>
-          <div className="h-6 w-full rounded bg-white/5 border border-white/5 flex items-center justify-center">
-            <span className="text-[8px] font-semibold text-slate-400">Grievance Routed to Municipal Corp</span>
-          </div>
-          <div className="absolute top-1/2 left-1/2 w-48 h-48 rounded-full bg-brand-purple/10 blur-2xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        </div>
-      )
+      image: civicImg
     },
     {
-      title: "Campus Connect Social Network",
-      description: "A secure college-specific social networking and communications dashboard built to help students coordinate events, announcements, and peer messages.",
-      tech: ["ReactJS", "Firebase Auth", "Firestore", "Firebase Storage", "TailwindCSS"],
+      title: "Campus Connect Social",
+      description: "A real-time college networking dashboard allowing students, clubs, and admin boards to send notifications, post event updates, and coordinate threads.",
+      tech: ["React.js", "Firebase", "Firestore", "Storage API", "Tailwind CSS"],
       github: "https://github.com",
       demo: "https://example.com",
-      graphic: (
-        <div className="w-full h-full bg-gradient-to-br from-brand-blue/20 to-brand-pink/20 flex flex-col justify-between p-6 relative overflow-hidden">
-          {/* Card Mockup Graphic */}
-          <div className="flex items-center justify-between border-b border-white/10 pb-3">
-            <span className="text-[10px] font-bold text-slate-400 font-display">CAMPUS FEED</span>
-            <Share2 className="text-brand-pink" size={16} />
-          </div>
-          <div className="space-y-2">
-            <div className="p-2 rounded bg-white/5 border border-white/5 flex items-start space-x-2">
-              <div className="w-4 h-4 rounded-full bg-brand-blue flex-shrink-0" />
-              <div className="space-y-1 flex-1">
-                <div className="h-1.5 w-12 bg-white/20 rounded" />
-                <div className="h-1.5 w-full bg-white/10 rounded" />
-              </div>
-            </div>
-            <div className="p-2 rounded bg-white/5 border border-white/5 flex items-start space-x-2">
-              <div className="w-4 h-4 rounded-full bg-brand-purple flex-shrink-0" />
-              <div className="space-y-1 flex-1">
-                <div className="h-1.5 w-12 bg-white/20 rounded" />
-                <div className="h-1.5 w-full bg-white/10 rounded" />
-              </div>
-            </div>
-          </div>
-          <div className="absolute top-1/2 left-1/2 w-48 h-48 rounded-full bg-brand-pink/5 blur-2xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        </div>
-      )
+      image: null // Renders high-fidelity custom visual mockup
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 }
-    }
-  };
-
-  const cardVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: 'spring', stiffness: 80, damping: 15 }
-    }
-  };
-
   return (
-    <section id="projects" className="py-24 relative overflow-hidden bg-dark-bg">
-      {/* Background Decorative Blob */}
-      <div className="absolute top-1/2 right-1/4 w-80 h-80 rounded-full bg-brand-blue/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-brand-purple/5 blur-[120px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="projects" className="py-32 relative bg-premium-beige border-y border-premium-border/40">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-white">
-            Featured <span className="bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent">Projects</span>
+        <div className="text-center mb-20">
+          <span className="text-[10px] font-bold tracking-widest text-premium-teal uppercase font-display block">
+            Portfolio
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-premium-black mt-2">
+            Showcase <span className="text-stroke text-premium-black">Projects.</span>
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-brand-blue to-brand-purple mx-auto mt-4 rounded-full" />
+          <div className="w-12 h-1 bg-premium-teal mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Projects Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        {/* Card Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
-            <motion.div
-              key={idx}
-              variants={cardVariants}
-              className="glass-panel glass-panel-hover flex flex-col h-full rounded-3xl border border-white/5 overflow-hidden bg-[#0d1127]/20"
-            >
-              {/* Project Image Placeholder (Interactive Vector Graphic) */}
-              <div className="h-48 border-b border-white/5 relative overflow-hidden flex-shrink-0 bg-slate-950">
-                {project.graphic}
-              </div>
-
-              {/* Card Details */}
-              <div className="p-6 sm:p-8 flex flex-col flex-1">
-                <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight mb-3 font-display">
-                  {project.title}
-                </h3>
-                
-                <p className="text-slate-300 text-sm leading-relaxed mb-6 flex-1">
-                  {project.description}
-                </p>
-
-                {/* Tech Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((t, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/5 text-slate-400 text-xs font-semibold"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Action Buttons */}
-                <div className="grid grid-cols-2 gap-4 mt-auto">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center space-x-2 py-3 px-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 text-white text-sm font-semibold transition-all duration-200"
-                  >
-                    <Github size={16} />
-                    <span>GitHub</span>
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center space-x-2 py-3 px-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-purple text-white text-sm font-semibold shadow-md shadow-brand-blue/15 hover:shadow-brand-purple/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-                  >
-                    <ExternalLink size={16} />
-                    <span>Live Demo</span>
-                  </a>
-                </div>
-              </div>
-            </motion.div>
+            <ProjectCard key={idx} project={project} />
           ))}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );
