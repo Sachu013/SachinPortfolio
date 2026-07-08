@@ -74,7 +74,7 @@ export default function Skills() {
             Capabilities
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-premium-black mt-2">
-            Skill <span className="text-stroke text-premium-black">Visualization.</span>
+            Skill <span className="text-premium-teal">Visualization.</span>
           </h2>
           <div className="w-12 h-1 bg-premium-teal mx-auto mt-4 rounded-full" />
         </div>

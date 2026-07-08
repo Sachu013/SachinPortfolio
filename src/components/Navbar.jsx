@@ -29,7 +29,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'py-3 bg-[#FCFBF7]/70 backdrop-blur-md border-b border-premium-border/50 shadow-sm shadow-premium-black/[0.01]' 
+          ? 'py-3 bg-premium-white/80 backdrop-blur-md border-b border-premium-border/50 shadow-sm shadow-premium-black/[0.01]' 
           : 'py-5 bg-transparent'
       }`}
     >
@@ -59,7 +59,7 @@ export default function Navbar() {
                 {hoveredIdx === idx && (
                   <motion.div
                     layoutId="navbarHoverBg"
-                    className="absolute inset-0 bg-[#F0EFEA] rounded-full z-0"
+                    className="absolute inset-0 bg-premium-beige rounded-full z-0"
                     transition={{ type: 'spring', stiffness: 220, damping: 22 }}
                   />
                 )}

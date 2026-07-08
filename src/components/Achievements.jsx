@@ -57,7 +57,7 @@ export default function Achievements() {
             Accolades
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-premium-black mt-2">
-            Key <span className="text-stroke text-premium-black">Achievements.</span>
+            Key <span className="text-premium-teal">Achievements.</span>
           </h2>
           <div className="w-12 h-1 bg-premium-teal mx-auto mt-4 rounded-full" />
         </div>
@@ -91,7 +91,7 @@ export default function Achievements() {
                 <h3 className="text-base sm:text-lg font-extrabold text-premium-black font-display tracking-tight">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-premium-gray leading-relaxed font-sans">
+                <p className="text-sm sm:text-base text-premium-gray leading-relaxed font-sans">
                   {item.desc}
                 </p>
               </div>

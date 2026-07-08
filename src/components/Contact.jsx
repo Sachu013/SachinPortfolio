@@ -54,20 +54,20 @@ export default function Contact() {
     {
       icon: <Mail className="text-premium-teal" size={18} />,
       label: "Direct Mail",
-      value: "sachinsuresh@example.com",
-      link: "mailto:sachinsuresh@example.com"
+      value: "sachinsuresh.1311@gmail.com",
+      link: "mailto:sachinsuresh.1311@gmail.com"
     },
     {
       icon: <Linkedin className="text-premium-teal" size={18} />,
       label: "LinkedIn Connect",
-      value: "linkedin.com/in/sachin-suresh",
-      link: "https://linkedin.com"
+      value: "linkedin.com/in/sachin-suresh-2391922a8",
+      link: "https://www.linkedin.com/in/sachin-suresh-2391922a8/"
     },
     {
       icon: <Github className="text-premium-teal" size={18} />,
       label: "GitHub Repositories",
-      value: "github.com/sachin-suresh",
-      link: "https://github.com"
+      value: "github.com/Sachu013",
+      link: "https://github.com/Sachu013"
     }
   ];
 
@@ -81,7 +81,7 @@ export default function Contact() {
             Inbox
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-premium-black mt-2">
-            Let's <span className="text-stroke text-premium-black">Connect.</span>
+            Let's <span className="text-premium-teal">Connect.</span>
           </h2>
           <div className="w-12 h-1 bg-premium-teal mx-auto mt-4 rounded-full" />
         </div>

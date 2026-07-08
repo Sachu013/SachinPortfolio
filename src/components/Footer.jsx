@@ -10,9 +10,9 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { icon: <Github size={16} />, href: "https://github.com" },
-    { icon: <Linkedin size={16} />, href: "https://linkedin.com" },
-    { icon: <Mail size={16} />, href: "mailto:sachinsuresh@example.com" }
+    { icon: <Github size={16} />, href: "https://github.com/Sachu013" },
+    { icon: <Linkedin size={16} />, href: "https://www.linkedin.com/in/sachin-suresh-2391922a8/" },
+    { icon: <Mail size={16} />, href: "mailto:sachinsuresh.1311@gmail.com" }
   ];
 
   return (

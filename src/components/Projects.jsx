@@ -96,7 +96,7 @@ function ProjectCard({ project }) {
           {project.title}
         </h3>
         
-        <p className="text-sm text-premium-gray leading-relaxed mb-6 flex-1">
+        <p className="text-sm sm:text-base text-premium-gray leading-relaxed mb-6 flex-1">
           {project.description}
         </p>
 
@@ -105,7 +105,7 @@ function ProjectCard({ project }) {
           {project.tech.map((t, tIdx) => (
             <span
               key={tIdx}
-              className="px-2.5 py-1 rounded-full bg-[#F2F1EA] border border-premium-border text-premium-gray text-[10px] font-bold uppercase tracking-wider"
+              className="px-2.5 py-1 rounded-full bg-premium-beige border border-premium-border text-premium-gray text-[10px] font-bold uppercase tracking-wider"
             >
               {t}
             </span>
@@ -144,7 +144,7 @@ export default function Projects() {
       title: "Subscription Management",
       description: "A secure subscription licensing system engineered to help enterprise SaaS providers manage client contracts, trace renewals, and monitor licensing operations.",
       tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS"],
-      github: "https://github.com",
+      github: "https://github.com/Sachu013",
       demo: "https://example.com",
       image: subscriptionImg
     },
@@ -152,7 +152,7 @@ export default function Projects() {
       title: "Civic Sense Reporting",
       description: "A civic engagement platform designed for municipal grievance management. Features geolocation reporting, status tracking, and AI issue classification routing.",
       tech: ["React.js", "Node.js", "Express.js", "MongoDB", "OpenAI", "Google Maps"],
-      github: "https://github.com",
+      github: "https://github.com/Sachu013",
       demo: "https://example.com",
       image: civicImg
     },
@@ -160,7 +160,7 @@ export default function Projects() {
       title: "Campus Connect Social",
       description: "A real-time college networking dashboard allowing students, clubs, and admin boards to send notifications, post event updates, and coordinate threads.",
       tech: ["React.js", "Firebase", "Firestore", "Storage API", "Tailwind CSS"],
-      github: "https://github.com",
+      github: "https://github.com/Sachu013",
       demo: "https://example.com",
       image: null // Renders high-fidelity custom visual mockup
     }
@@ -176,7 +176,7 @@ export default function Projects() {
             Portfolio
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-premium-black mt-2">
-            Showcase <span className="text-stroke text-premium-black">Projects.</span>
+            Showcase <span className="text-premium-teal">Projects.</span>
           </h2>
           <div className="w-12 h-1 bg-premium-teal mx-auto mt-4 rounded-full" />
         </div>

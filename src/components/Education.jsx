@@ -81,7 +81,7 @@ export default function Education() {
             Timeline
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-premium-black mt-2">
-            Academics & <span className="text-stroke text-premium-black">Credentials.</span>
+            Academics & <span className="text-premium-teal">Credentials.</span>
           </h2>
           <div className="w-12 h-1 bg-premium-teal mx-auto mt-4 rounded-full" />
         </div>
@@ -118,7 +118,7 @@ export default function Education() {
                         <Calendar size={10} />
                         <span>{edu.duration}</span>
                       </span>
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#EBEAE3] border border-premium-border text-premium-black text-[9px] font-bold uppercase tracking-wider">
+                      <span className="px-2.5 py-0.5 rounded-full bg-premium-teal/10 border border-premium-teal/20 text-premium-teal text-[10px] font-bold uppercase tracking-wider">
                         {edu.metrics}
                       </span>
                     </div>
@@ -129,7 +129,7 @@ export default function Education() {
                     <p className="text-xs font-semibold text-premium-teal uppercase tracking-wider">
                       {edu.institution}
                     </p>
-                    <p className="text-xs sm:text-sm text-premium-gray leading-relaxed max-w-xl pt-1">
+                    <p className="text-sm sm:text-base text-premium-gray leading-relaxed max-w-xl pt-1">
                       {edu.description}
                     </p>
                   </div>
@@ -173,7 +173,7 @@ export default function Education() {
                       <span className="text-[9px] font-bold text-premium-gray uppercase tracking-wider block mb-1">
                         Core Competency
                       </span>
-                      <p className="text-xs sm:text-sm text-premium-gray leading-relaxed">
+                      <p className="text-sm sm:text-base text-premium-gray leading-relaxed">
                         {cert.skills}
                       </p>
                     </div>

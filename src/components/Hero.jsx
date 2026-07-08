@@ -50,9 +50,9 @@ export default function Hero() {
   };
 
   const socialLinks = [
-    { icon: <Github size={18} />, href: "https://github.com" },
-    { icon: <Linkedin size={18} />, href: "https://linkedin.com" },
-    { icon: <Mail size={18} />, href: "mailto:sachinsuresh@example.com" }
+    { icon: <Github size={18} />, href: "https://github.com/Sachu013" },
+    { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/sachin-suresh-2391922a8/" },
+    { icon: <Mail size={18} />, href: "mailto:sachinsuresh.1311@gmail.com" }
   ];
 
   return (
