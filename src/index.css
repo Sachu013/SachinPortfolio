@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-premium-white: #FCFBF7;
-  --color-premium-beige: #F5F4EF;
-  --color-premium-black: #1A1A1A;
-  --color-premium-gray: #555555;
-  --color-premium-teal: #0D9488;
-  --color-premium-teal-hover: #0F766E;
-  --color-premium-border: rgba(26, 26, 26, 0.07);
+  --color-premium-white: #05060f;
+  --color-premium-beige: #0d1127;
+  --color-premium-black: #FCFBF7;
+  --color-premium-gray: #94A3B8;
+  --color-premium-teal: #14B8A6;
+  --color-premium-teal-hover: #0D9488;
+  --color-premium-border: rgba(255, 255, 255, 0.08);
   
   --font-display: "Outfit", "Inter", sans-serif;
   --font-sans: "Inter", "Outfit", system-ui, -apple-system, sans-serif;
@@ -37,7 +37,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E5E2D9;
+  background: #1e293b;
   border-radius: 9999px;
   transition: background 0.3s;
 }
@@ -52,17 +52,17 @@
 }
 
 .premium-glass {
-  background: rgba(252, 251, 247, 0.75);
+  background: rgba(13, 17, 39, 0.45);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--color-premium-border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 .light-grid-bg {
   background-image: 
-    linear-gradient(rgba(26, 26, 26, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(26, 26, 26, 0.015) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -74,7 +74,7 @@
 /* Spotlight pointer container */
 .cursor-glow {
   pointer-events: none;
-  background: radial-gradient(400px circle at var(--x, 0px) var(--y, 0px), rgba(13, 148, 136, 0.045) 0%, transparent 80%);
+  background: radial-gradient(400px circle at var(--x, 0px) var(--y, 0px), rgba(20, 184, 166, 0.07) 0%, transparent 80%);
   position: fixed;
   top: 0;
   left: 0;
@@ -85,7 +85,7 @@
 
 /* Text stroke for editorial headings */
 .text-stroke {
-  -webkit-text-stroke: 1px rgba(26, 26, 26, 0.15);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
   color: transparent;
 }
 .text-stroke:hover {

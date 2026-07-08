@@ -123,7 +123,7 @@ export default function Skills() {
         >
           {skillPillars[activeCategory].skills.map((skill, skillIdx) => {
             // Circular SVG calculations
-            const radius = 32;
+            const radius = 26;
             const circumference = 2 * Math.PI * radius;
             const strokeDashoffset = circumference - (skill.level / 100) * circumference;
 
@@ -156,7 +156,7 @@ export default function Skills() {
                       cx="32"
                       cy="32"
                       r={radius}
-                      className="stroke-[#EBEAE3] fill-transparent"
+                      className="stroke-premium-border fill-transparent"
                       strokeWidth="2.5"
                     />
                     {/* Animated Fill Circle */}

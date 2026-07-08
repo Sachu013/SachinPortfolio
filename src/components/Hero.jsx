@@ -101,18 +101,18 @@ export default function Hero() {
               <div className="overflow-hidden">
                 <motion.h1 
                   variants={textRevealVariants}
-                  className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-premium-black leading-[1.1]"
+                  className="font-display text-5xl sm:text-7xl font-black tracking-tight text-premium-black leading-[1.1]"
                 >
-                  Engineering robust software systems
+                  I am <span className="bg-gradient-to-r from-premium-teal to-[#2DD4BF] bg-clip-text text-transparent">Sachin Suresh.</span>
                 </motion.h1>
               </div>
               <div className="overflow-hidden">
-                <motion.h1 
+                <motion.h2 
                   variants={textRevealVariants}
-                  className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-premium-teal leading-[1.1]"
+                  className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-premium-gray leading-[1.2]"
                 >
-                  with clean, modular code.
-                </motion.h1>
+                  Learning. Building. Innovating.
+                </motion.h2>
               </div>
             </div>
 
@@ -122,7 +122,6 @@ export default function Hero() {
                 variants={textRevealVariants}
                 className="text-base sm:text-lg text-premium-gray max-w-xl leading-relaxed"
               >
-                Hi, I am <strong className="text-premium-black font-semibold">Sachin Suresh</strong>. 
                 Aspiring Software Engineer, Full Stack Developer, and Java Enthusiast. I build optimized web applications, write scalable backend architectures, and focus on algorithmic performance.
               </motion.p>
             </div>

@@ -17,9 +17,9 @@ export default function App() {
       {/* Page Content sections */}
       <main>
         <Hero />
+        <Education />
         <Skills />
         <Projects />
-        <Education />
         <Achievements />
         <Contact />
       </main>
