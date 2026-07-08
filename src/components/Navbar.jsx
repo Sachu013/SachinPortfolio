@@ -16,9 +16,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: 'Academics', href: '#education' },
+    { name: 'Credentials', href: '#credentials' },
     { name: 'Skills', href: '#skills' },
     { name: 'Work', href: '#projects' },
-    { name: 'Timeline', href: '#education' },
     { name: 'Inbox', href: '#contact' }
   ];
 

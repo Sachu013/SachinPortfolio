@@ -55,7 +55,9 @@ export default function Footer() {
             &copy; {currentYear} Sachin Suresh. Handcrafted with React and Tailwind.
           </p>
 
-          <div className="flex items-center space-x-6 text-xs sm:text-sm font-bold uppercase tracking-widest text-premium-gray">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-6 text-xs sm:text-sm font-bold uppercase tracking-widest text-premium-gray">
+            <a href="#education" className="hover:text-premium-black transition-colors">Academics</a>
+            <a href="#credentials" className="hover:text-premium-black transition-colors">Credentials</a>
             <a href="#skills" className="hover:text-premium-black transition-colors">Skills</a>
             <a href="#projects" className="hover:text-premium-black transition-colors">Work</a>
             <a
